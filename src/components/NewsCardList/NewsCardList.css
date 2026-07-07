@@ -28,7 +28,9 @@
 
 @media screen and (max-width: 320px) {
   .card__list_container {
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 10px;
+    padding: 0;
   }
 }
