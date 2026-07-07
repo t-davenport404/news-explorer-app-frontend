@@ -9,3 +9,5 @@ The News Explorer App is a responsive, single-page web application that provides
 - **Styling & UI:** HTML5, CSS3, BEM Methodology
 - **Data Fetching & APIs:** Native Fetch API, News API Integration
 - **Build Tools & Package Management:** NPM, Webpack / Create React App
+
+## Video Link

@@ -1,0 +1,91 @@
+.search-field {
+  display: flex;
+  align-items: center;
+  background-color: #ffffff;
+  border: 1px solid #d1d2d6;
+  border-radius: 100px;
+  overflow: hidden;
+  width: 100%;
+  max-width: 608px;
+  height: 64px;
+  box-sizing: border-box;
+  margin: 0;
+}
+
+.search-field__input {
+  flex: 1;
+  border: none;
+  outline: none;
+  background: transparent;
+  padding: 0 24px;
+  font-size: 16px;
+  color: #000000;
+}
+
+.search-field__input::placeholder {
+  color: #b6bcbf;
+}
+
+.search-field__button {
+  background-color: #2f71e5;
+  color: #ffffff;
+  border: none;
+  border-radius: 100px;
+  height: 100%;
+  padding: 0 40px;
+  font-size: 18px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  margin: -1px;
+}
+
+.search-field__button:hover {
+  background-color: #2a64cc;
+}
+
+@media screen and (max-width: 768px) {
+  .search-field {
+    width: 452px;
+    margin-bottom: 48px;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  @media screen and (max-width: 320px) {
+    .search-field {
+      display: block;
+      width: 288px;
+      height: auto;
+      margin: 0 auto 16px auto;
+      padding: 0;
+      border: none;
+      background: none;
+    }
+
+    .search-form {
+      box-sizing: border-box;
+      width: 100%;
+      padding: 0; /* Adjust as needed */
+    }
+
+    .search-field__input {
+      background-color: #ffffff; /* Or your desired color */
+      -webkit-appearance: none; /* Removes Safari's default styling */
+      appearance: none;
+      border: 1px solid #ccc;
+      margin-bottom: 20px;
+      width: 288px;
+      height: 56px;
+    }
+
+    .search-field__button {
+      display: block;
+      width: 288px;
+      height: 50px;
+      margin: 0;
+      box-sizing: border-box;
+      border-radius: 100px;
+    }
+  }
+}
