@@ -44,6 +44,16 @@ function App() {
 
   const navigate = useNavigate();
 
+  useEffect(() => {
+    if (activeModal !== "") {
+      document.body.classList.add("modal-is-open");
+    } else {
+      document.body.classList.remove("modal-is-open");
+    }
+
+    return () => document.body.classList.remove("modal-is-open");
+  }, [activeModal]);
+
   const handleSearchSubmit = (keyword) => {
     setIsLoading(true);
     setSearchError(false);

@@ -88,8 +88,12 @@
 }
 
 @media screen and (max-width: 320px) {
+  .search-results__section {
+    padding: 32px 16px 24px;
+  }
   .search-results__show-more {
-    padding: 16px 98px 16px 99px;
     margin-top: 16px;
+    width: 100%;
+    height: 56px;
   }
 }

@@ -34,6 +34,10 @@ body,
   flex-direction: column;
 }
 
+.modal-is-open .navigation__hamburger {
+  display: none;
+}
+
 .success-content {
   display: flex;
   flex-direction: column;

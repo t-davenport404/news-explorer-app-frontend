@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import "./Modal.css";
 import closeModalBtn from "../../assets/close.svg";
 
@@ -18,6 +19,22 @@ function Modal({
       onClose();
     }
   };
+
+  useEffect(() => {
+    const handleEscClose = (event) => {
+      if (event.key === "Escape") {
+        onClose();
+      }
+    };
+
+    if (isOpen) {
+      document.addEventListener("keydown", handleEscClose);
+    }
+
+    return () => {
+      document.removeEventListener("keydown", handleEscClose);
+    };
+  }, [isOpen, onClose]);
 
   return (
     <div

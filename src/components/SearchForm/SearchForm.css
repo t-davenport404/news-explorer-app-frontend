@@ -54,13 +54,16 @@
 @media screen and (max-width: 320px) {
   @media screen and (max-width: 320px) {
     .search-field {
-      display: block;
+      display: flex;
+      flex-direction: column;
+      background: none;
+      border: none;
       width: 288px;
       height: auto;
-      margin: 0 auto 16px auto;
+      gap: 16px;
       padding: 0;
-      border: none;
-      background: none;
+      margin: 0 auto;
+      overflow: visible;
     }
 
     .search-form {
@@ -70,21 +73,23 @@
     }
 
     .search-field__input {
+      width: 100%;
+      height: 56px;
+      border-radius: 100px;
       background-color: #ffffff;
-      -webkit-appearance: none;
-      appearance: none;
+      box-sizing: border-box;
       border: 1px solid #ccc;
-      margin-bottom: 20px;
-      width: 288px;
+      font-size: 16px;
+      line-height: 22px;
+      padding: 18px 0 18px 32px;
+      margin: 0;
       height: 56px;
     }
 
     .search-field__button {
-      display: block;
-      width: 288px;
-      height: 50px;
-      margin: 0;
-      box-sizing: border-box;
+      width: 100%;
+      height: 56px;
+      margin: 0 0 32px;
       border-radius: 100px;
     }
   }

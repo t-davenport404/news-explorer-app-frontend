@@ -73,7 +73,7 @@
 
 .header__display {
   position: relative;
-  z-index: 1;
+
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -160,8 +160,6 @@
   }
 
   .header__sub-title {
-    font-size: 18px;
-    line-height: 24px;
     width: 100%;
     max-width: 452px;
     height: auto;
@@ -172,40 +170,59 @@
 @media screen and (max-width: 320px) {
   .header {
     position: relative;
-    min-height: 568px;
+
     width: 100%;
     display: flex;
     flex-direction: column;
-    padding: 0 16px;
+    justify-content: flex-start;
+    padding: 0;
     background: transparent;
     border-bottom: none;
+    gap: 30px;
+  }
+
+  .header .header_theme_dark {
+  }
+
+  .header_opened {
+    min-height: 100vh;
+  }
+
+  .header__menu {
+    padding: 16px;
+    margin: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 56px;
+    align-items: center;
+    border-bottom: 1px solid #d1d2d6;
   }
 
   .header_theme_dark .header__logo {
     font-size: 16px;
   }
 
-  .header__menu {
-    padding: 0;
-    margin: 0 0 auto 0;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-    height: 100%;
-    align-items: flex-start;
-    align-items: center;
+  .header__text-container-hidden {
+    display: none;
   }
 
   .header__display {
     display: flex;
     position: static;
     width: 100%;
-    padding: 0 16px 32px;
+    padding: 0;
   }
 
   .header__title {
     font-size: 30px;
+    padding: 0 16px;
+  }
+
+  .header__sub-title {
+    margin: 0 0 122px 0;
+    padding: 0 16px;
   }
 }

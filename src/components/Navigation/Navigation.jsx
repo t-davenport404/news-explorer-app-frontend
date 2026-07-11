@@ -8,8 +8,9 @@ function Navigation({
   handleLoginClick,
   handleLogout,
   variant,
+  isMenuOpen,
+  setIsMenuOpen,
 }) {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
   const displayUsername = currentUser?.name || "User";
   const theme = variant === "saved" ? "light" : "dark";
 
@@ -75,6 +76,12 @@ function Navigation({
           </button>
         )}
       </div>
+      {isMenuOpen && (
+        <div
+          className="navigation__overlay"
+          onClick={() => setIsMenuOpen(false)}
+        ></div>
+      )}
     </nav>
   );
 }

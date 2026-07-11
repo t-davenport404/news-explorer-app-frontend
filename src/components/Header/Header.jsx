@@ -1,3 +1,4 @@
+import { useState } from "react";
 import "./Header.css";
 import Navigation from "../Navigation/Navigation";
 import SearchForm from "../SearchForm/SearchForm";
@@ -10,13 +11,17 @@ function Header({
   handleLogout,
   variant,
 }) {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
   const isSavedRoute = isLoggedIn && variant === "saved";
   const headerThemeClass = isSavedRoute
     ? "header_theme_light"
     : "header_theme_dark";
 
   return (
-    <header className={`header ${headerThemeClass}`}>
+    <header
+      className={`header ${headerThemeClass} ${isMenuOpen ? "header_opened" : ""}`}
+    >
       <section className="header__menu">
         <span className="header__logo">NewsExplorer</span>
 
@@ -26,6 +31,8 @@ function Header({
           handleLoginClick={handleSignInClick}
           handleLogout={handleLogout}
           variant={variant}
+          isMenuOpen={isMenuOpen}
+          setIsMenuOpen={setIsMenuOpen}
         />
       </section>
 

@@ -27,7 +27,7 @@
 }
 
 @media screen and (max-width: 320px) {
-  .card__list_container {
+  .card__list {
     display: grid;
     grid-template-columns: 1fr;
     gap: 10px;
