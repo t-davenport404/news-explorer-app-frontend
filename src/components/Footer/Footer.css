@@ -37,16 +37,24 @@
 }
 
 .footer_TripleTen_link {
-  font-family: Roboto, Arial, Helvetica, sans-serif;
-  font-size: 18px;
-  color: #1a1b22;
   width: 74px;
   height: 24px;
   margin: 0 40px 0 0;
-  background: transparent;
   border: none;
   padding: 0;
+  text-decoration: none;
+}
+
+.footer__button {
+  background: transparent;
+  border: none;
   cursor: pointer;
+  font-family: "Inter", sans-serif;
+  font-family: Roboto, Arial, Helvetica, sans-serif;
+  font-size: 18px;
+  color: #1a1b22;
+  cursor: pointer;
+  padding: 0;
 }
 
 .footer_GitHub_link {
@@ -71,7 +79,51 @@
 
 @media screen and (max-width: 768px) {
   .footer {
-    padding: 0 40px;
+    padding: 0 20px;
+  }
+}
+
+@media screen and (max-width: 630px) {
+  .footer_home_link {
+    margin: 0 20px 0 0;
+  }
+  .footer_TripleTen_link {
+    margin: 0 20px 0 0;
+  }
+
+  .footer_GitHub_link {
+    margin: 0 24px 0 0;
+  }
+}
+
+@media screen and (max-width: 590px) {
+  .footer {
+    display: flex;
+    flex-direction: column-reverse;
+    padding: 20px 16px;
+    height: auto;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .footer__menu_panel {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 20px;
+    width: 100%;
+    align-items: flex-start;
+  }
+
+  .footer__link-group {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .footer_home_link {
+    margin: 0;
+    padding: 0;
   }
 }
 

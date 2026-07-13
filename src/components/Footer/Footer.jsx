@@ -18,7 +18,7 @@ function Footer() {
             target="_blank"
             rel="noopener noreferrer"
           >
-            <button className="footer_TripleTen_link">TripleTen</button>
+            <button className="footer__button">TripleTen</button>
           </a>
         </div>
         <div className="footer__button-group">

@@ -17,6 +17,7 @@ export function useForm(initialValues) {
     }
 
     setErrors((prevErrors) => ({ ...prevErrors, [name]: errorMessage }));
+    setIsFormValid(target.closest("form").checkValidity());
   };
 
   const resetForm = useCallback(

@@ -1,7 +1,6 @@
-import { handleServerResponse } from "./api";
 import { BASE_URL } from "./constants";
 
-export const register = (name, email, password) => {
+export const register = (name, email, _password) => {
   const mockUser = { name: name, email: email, id: `mock-id-${Date.now()}` };
 
   localStorage.setItem(`user_${email}`, JSON.stringify(mockUser));
@@ -13,7 +12,7 @@ export const register = (name, email, password) => {
   });
 };
 
-export const authorize = (email, password) => {
+export const authorize = (email, _password) => {
   localStorage.setItem("active_user_email", email);
 
   return Promise.resolve({
@@ -21,7 +20,7 @@ export const authorize = (email, password) => {
   });
 };
 
-export const checkToken = (token) => {
+export const checkToken = (_token) => {
   const activeEmail =
     localStorage.getItem("active_user_email") || "guest@example.com";
   const savedProfile = localStorage.getItem(`user_${activeEmail}`);

@@ -127,7 +127,7 @@
   background: transparent;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 900px) {
   .header {
     max-height: 400px;
   }
@@ -167,42 +167,66 @@
   }
 }
 
-@media screen and (max-width: 320px) {
-  .header {
-    position: relative;
+@media screen and (max-width: 644px) {
+  .header_opened .header__logo,
+  .header_opened .header__menu-button {
+    color: #1a1b22;
+    z-index: 2;
+  }
+}
 
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    padding: 0;
-    background: transparent;
-    border-bottom: none;
-    gap: 30px;
+@media screen and (max-width: 520px) {
+  .header__display {
+    padding: 30px 20px 0;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .header {
+    background-image: url("../../assets/header__background.png");
+    background-size: cover;
+    background-position: top center;
+    background-repeat: no-repeat;
+    overflow: visible;
   }
 
-  .header .header_theme_dark {
+  .header_theme_light {
+    background-color: #ffffff;
+    background-image: none;
+  }
+
+  .header_opened .header__logo,
+  .header_opened .header__menu-button {
+    color: #ffffff;
+    z-index: 2;
+  }
+
+  .header_theme_dark {
+    min-height: 536px;
   }
 
   .header_opened {
-    min-height: 100vh;
+    padding-top: 0;
+    background-color: #1a1b22;
   }
 
   .header__menu {
-    padding: 16px;
-    margin: 0;
+    position: absolute;
+    top: 0;
     display: flex;
-    flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    width: 100%;
+    padding: 0 16px;
     height: 56px;
-    align-items: center;
     border-bottom: 1px solid #d1d2d6;
   }
 
   .header_theme_dark .header__logo {
     font-size: 16px;
+  }
+
+  .header.header_theme_light .header__logo {
+    color: #1a1b22;
   }
 
   .header__text-container-hidden {
@@ -211,18 +235,21 @@
 
   .header__display {
     display: flex;
-    position: static;
+    flex-direction: column;
     width: 100%;
-    padding: 0;
+    padding: 1px;
   }
 
   .header__title {
-    font-size: 30px;
-    padding: 0 16px;
+    font-size: 36px;
+    padding: 86px 19px 0;
+    margin: 0;
   }
 
   .header__sub-title {
-    margin: 0 0 122px 0;
-    padding: 0 16px;
+    margin: 16px 0 122px;
+    padding: 0;
+    width: 288px;
+    height: 72px;
   }
 }

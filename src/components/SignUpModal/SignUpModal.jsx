@@ -9,10 +9,11 @@ const defaultValues = {
 };
 
 const SignUpModal = ({ isOpen, handleRegister, handleLoginClick, onClose }) => {
-  const { values, handleChange, errors, resetForm } = useForm(defaultValues);
+  const { values, handleChange, errors, resetForm, isFormValid } =
+    useForm(defaultValues);
+  /* eslint-disable no-unused-vars */
   const { email, password, name } = values;
-  const isFormInvalid = !email || !password || !name;
-
+  /* eslint-enable no-unused-vars */
   useEffect(() => {
     if (isOpen) {
       resetForm();
@@ -34,7 +35,7 @@ const SignUpModal = ({ isOpen, handleRegister, handleLoginClick, onClose }) => {
       onClose={onClose}
       isOpen={isOpen}
       hasForm={true}
-      disabled={isFormInvalid}
+      disabled={!isFormValid}
       onSubmit={handleSubmit}
       footerRedirect={
         <div className="modal__redirect-container">

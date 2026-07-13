@@ -22,7 +22,7 @@ function Header({
     <header
       className={`header ${headerThemeClass} ${isMenuOpen ? "header_opened" : ""}`}
     >
-      <section className="header__menu">
+      <div className="header__menu">
         <span className="header__logo">NewsExplorer</span>
 
         <Navigation
@@ -34,7 +34,7 @@ function Header({
           isMenuOpen={isMenuOpen}
           setIsMenuOpen={setIsMenuOpen}
         />
-      </section>
+      </div>
 
       {!isSavedRoute && (
         <section className="header__display">

@@ -1,5 +1,5 @@
 import React from "react";
-import { createRoot } from "react-dom/client"; // Correct import
+import { createRoot } from "react-dom/client";
 import App from "./components/App/App";
 import "./index.css";
 import { HashRouter } from "react-router-dom";

@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { NavLink } from "react-router-dom";
 import "./Navigation.css";
 
@@ -24,7 +23,9 @@ function Navigation({
         className={`navigation__hamburger ${isMenuOpen ? "navigation__hamburger_close" : ""}`}
         onClick={toggleMenu}
         aria-label="Toggle navigation"
-      ></button>
+      >
+        <span className="navigation__close-icon"></span>
+      </button>
 
       <div
         className={`navigation__button-cluster ${isMenuOpen ? "navigation__button-cluster_visible" : ""}`}
@@ -43,7 +44,7 @@ function Navigation({
           <NavLink
             to="/saved-news"
             className={({ isActive }) =>
-              `navigation__link ${isActive ? "navigation__link_active navigation__link_saved" : ""}`
+              `navigation__link navigation__link_saved ${isActive ? "navigation__link_active navigation__link_saved" : ""}`
             }
             onClick={() => setIsMenuOpen(false)}
           >

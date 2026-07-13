@@ -30,8 +30,6 @@ function App() {
   const [visibleCount, setVisibleCount] = useState(3);
   const [savedArticles, setSavedArticles] = useState([]);
 
-  const [isSignUpModalOpen, setIsSignUpModalOpen] = useState(false);
-  const [isLoginModalOpen, setIsLoginModalOpen] = useState(false);
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [activeModal, setActiveModal] = useState("");
 
@@ -65,7 +63,12 @@ function App() {
       .searchNews(keyword)
       .then((data) => {
         if (data.articles) {
-          setArticles(data.articles);
+          const articlesWithKeyword = data.articles.map((article) => ({
+            ...article,
+            keyword: keyword || "News",
+          }));
+
+          setArticles(articlesWithKeyword);
         }
       })
       .catch((err) => {
@@ -75,10 +78,6 @@ function App() {
       .finally(() => {
         setIsLoading(false);
       });
-  };
-
-  const handleShowMore = () => {
-    setVisibleCount((prevCount) => prevCount + 3);
   };
 
   const handleSaveArticle = (clickedArticle) => {
@@ -93,6 +92,10 @@ function App() {
         );
       }
     }
+  };
+
+  const handleShowMore = () => {
+    setVisibleCount((prevCount) => prevCount + 3);
   };
 
   const handleRegister = ({ name, email, password }) => {
@@ -155,59 +158,51 @@ function App() {
   return (
     <div className="page">
       <div className="page__content">
-        <Routes>
-          <Route
-            path="/"
-            element={
-              <Main
-                articles={articles}
-                isLoading={isLoading}
-                hasSearched={hasSearched}
-                searchError={searchError}
-                visibleCount={visibleCount}
-                handleShowMore={handleShowMore}
-                isLoggedIn={isLoggedIn}
-                variant="home"
-                handleSaveArticle={handleSaveArticle}
-              >
-                <Header
+        <Header
+          isLoggedIn={isLoggedIn}
+          currentUser={currentUser}
+          handleSignInClick={() => setActiveModal("login")}
+          handleSignUpClick={() => setActiveModal("registration")}
+          onSearchSubmit={handleSearchSubmit}
+          handleLogout={handleLogout}
+          variant={headerVariant}
+        />
+        <main>
+          <Routes>
+            <Route
+              path="/"
+              element={
+                <Main
+                  articles={articles}
+                  isLoading={isLoading}
+                  hasSearched={hasSearched}
+                  searchError={searchError}
+                  visibleCount={visibleCount}
+                  handleShowMore={handleShowMore}
                   isLoggedIn={isLoggedIn}
-                  currentUser={currentUser}
-                  handleSignInClick={() => setActiveModal("login")}
-                  handleSignUpClick={() => setActiveModal("registration")}
-                  onSearchSubmit={handleSearchSubmit}
-                  handleLogout={handleLogout}
-                  variant={headerVariant}
-                />
-              </Main>
-            }
-          />
-          <Route
-            path="/saved-news"
-            element={
-              isLoggedIn ? (
-                <>
-                  <Header
-                    isLoggedIn={isLoggedIn}
-                    currentUser={currentUser}
-                    handleSignInClick={() => setActiveModal("login")}
-                    handleSignUpClick={() => setActiveModal("registration")}
-                    onSearchSubmit={handleSearchSubmit}
-                    handleLogout={handleLogout}
-                    variant={headerVariant}
-                  />
-                  <SavedNews
-                    articles={savedArticles}
-                    currentUser={currentUser}
-                    variant="saved"
-                  />
-                </>
-              ) : (
-                <Navigate to="/" />
-              )
-            }
-          />
-        </Routes>
+                  variant="home"
+                  handleSaveArticle={handleSaveArticle}
+                ></Main>
+              }
+            />
+            <Route
+              path="/saved-news"
+              element={
+                isLoggedIn ? (
+                  <>
+                    <SavedNews
+                      articles={savedArticles}
+                      currentUser={currentUser}
+                      variant="saved"
+                    />
+                  </>
+                ) : (
+                  <Navigate to="/" />
+                )
+              }
+            />
+          </Routes>
+        </main>
       </div>
       <Footer />
 

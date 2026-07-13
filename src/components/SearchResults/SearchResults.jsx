@@ -20,7 +20,12 @@ function SearchResults({
 
   return (
     <section className="search-results__section">
-      {isLoading && <Preloader />}
+      {isLoading && (
+        <div className="search-results__loading">
+          <Preloader />
+          <p className="search-results__loading-text">Searching for news...</p>
+        </div>
+      )}
 
       {!isLoading && (
         <>
@@ -33,14 +38,17 @@ function SearchResults({
 
           {!searchError && articles.length === 0 && (
             <div className="nothing-found">
-              <p className="nothing-found__text">Nothing Found</p>
+              <i className="nothing-found__icon" />{" "}
+              <h3 className="nothing-found__title">Nothing found</h3>
+              <p className="nothing-found__text">
+                Sorry, but nothing matched that search term.
+              </p>
             </div>
           )}
 
           {!searchError && articles.length > 0 && (
             <>
               <h2 className="search-results__title">Search results</h2>
-
               <NewsCardList
                 articles={articles}
                 visibleCount={visibleCount}
@@ -48,7 +56,6 @@ function SearchResults({
                 variant={variant}
                 onSaveArticle={onSaveArticle}
               />
-
               {visibleCount < articles.length && (
                 <button
                   type="button"

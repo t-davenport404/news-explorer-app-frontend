@@ -8,8 +8,8 @@ const defaultValues = {
 };
 
 const SignInModal = ({ isOpen, handleLogin, handleSignUpClick, onClose }) => {
-  const { values, handleChange, errors, resetForm } = useForm(defaultValues);
-  const isFormInvalid = !values.email || !values.password;
+  const { values, handleChange, errors, resetForm, isFormValid } =
+    useForm(defaultValues);
 
   useEffect(() => {
     if (isOpen) {
@@ -31,7 +31,7 @@ const SignInModal = ({ isOpen, handleLogin, handleSignUpClick, onClose }) => {
       isOpen={isOpen}
       hasForm={true}
       buttonText="Sign in"
-      disabled={isFormInvalid}
+      disabled={!isFormValid}
       onSubmit={handleSubmit}
       footerRedirect={
         <div className="modal__redirect-container">

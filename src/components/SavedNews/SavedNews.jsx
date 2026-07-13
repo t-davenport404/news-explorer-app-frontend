@@ -23,23 +23,16 @@ function SavedNews({ articles, currentUser, variant }) {
       (a, b) => counts[b] - counts[a],
     );
 
-    if (sortedKeywords.length === 1) {
-      return sortedKeywords[0];
-    }
-    if (sortedKeywords.length === 2) {
-      return `${sortedKeywords[0]} and ${sortedKeywords[1]}`;
-    }
-    if (sortedKeywords.length === 3) {
-      return `${sortedKeywords[0]}, ${sortedKeywords[1]}, and ${sortedKeywords[2]}`;
+    if (sortedKeywords.length <= 2) {
+      return sortedKeywords.join(", ");
     }
 
-    const remainingCount = sortedKeywords.length - 2;
-    return `${sortedKeywords[0]}, ${sortedKeywords[1]}, and ${remainingCount} other`;
+    return `${sortedKeywords[0]}, ${sortedKeywords[1]}, and ${sortedKeywords.length - 2} more`;
   };
 
   return (
-    <main className="saved-news">
-      <section className="saved-news__header">
+    <section className="saved-news">
+      <div className="saved-news__header">
         <p className="saved-news__subtitle">Saved articles</p>
         <h1 className="saved-news__title">
           {currentUser?.name || "User"}, you have {savedArticles.length} saved
@@ -48,7 +41,7 @@ function SavedNews({ articles, currentUser, variant }) {
         <p className="saved-news__keywords">
           By keywords: <strong>{getKeywordSummary()}</strong>
         </p>
-      </section>
+      </div>
 
       <section className="saved-news__content">
         <div className="saved-news__grid">
@@ -63,7 +56,7 @@ function SavedNews({ articles, currentUser, variant }) {
           ))}
         </div>
       </section>
-    </main>
+    </section>
   );
 }
 
