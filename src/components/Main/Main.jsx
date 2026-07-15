@@ -14,8 +14,8 @@ function Main({
   children,
 }) {
   return (
-    <main className="main">
-      <section className="hero">{children}</section>
+    <section className="main">
+      <div className="hero">{children}</div>
 
       {(isLoading || hasSearched) && (
         <SearchResults
@@ -31,7 +31,7 @@ function Main({
         />
       )}
       <About />
-    </main>
+    </section>
   );
 }
 
