@@ -1,0 +1,39 @@
+.modal__redirect-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 4px;
+  margin-top: 16px;
+  width: 100%;
+}
+
+.modal__redirect-text {
+  font-family: "Inter", Arial, sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 18px;
+  color: #000000;
+}
+
+.modal__redirect-link {
+  background: transparent;
+  border: none;
+  padding: 0;
+  font-family: "Inter", Arial, sans-serif;
+  font-size: 14px;
+  line-height: 18px;
+  color: #2f71e5;
+  cursor: pointer;
+  transition: opacity 0.2s ease;
+}
+
+.modal__redirect-link:hover {
+  opacity: 0.7;
+}
+
+@media screen and (max-width: 320px) {
+  .modal .modal__content_type_form {
+    width: 100%;
+    height: 560px;
+  }
+}

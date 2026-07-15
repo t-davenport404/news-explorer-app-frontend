@@ -1,0 +1,253 @@
+.header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.header__logo {
+  font-size: 20px;
+}
+
+.header_theme_dark {
+  background-image: url("../../assets/header__background.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: auto;
+  border-bottom: 1px solid #d1d2d6;
+}
+
+.header_theme_light {
+  background: #ffffff;
+  height: auto;
+  border-bottom: 1px solid #d1d2d6;
+}
+
+.header__background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  object-fit: cover;
+  z-index: 0;
+}
+
+.header__menu {
+  border-bottom: inherit;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 104px;
+  height: 80px;
+  box-sizing: border-box;
+}
+
+.header_theme_dark .header__logo {
+  font-family: "Roboto Slab", Arial, Helvetica, sans-serif;
+  color: #ffffff;
+  font-size: 20px;
+}
+
+.header_theme_light .header__logo {
+  font-family: "Roboto Slab", Arial, Helvetica, sans-serif;
+  color: #1a1b22;
+  font-size: 20px;
+}
+
+.header__menu-button {
+  display: none;
+}
+
+.header__navigation-wrapper {
+  display: block;
+}
+
+.header__display {
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  max-width: 608px;
+  margin: 40px auto 0;
+  padding-bottom: 80px;
+}
+
+.header__title {
+  font-family:
+    Roboto Slab,
+    Arial,
+    Helvetica,
+    sans-serif;
+  margin: 0;
+  color: #ffffff;
+  font-size: 60px;
+  line-height: 64px;
+  width: 608px;
+  text-align: left;
+}
+
+.header__sub-title {
+  margin: 32px 0 88px;
+  font-family: Roboto, Arial, Helvetica, sans-serif;
+  color: #ffffff;
+  font-size: 18px;
+  line-height: 24px;
+  text-align: left;
+}
+
+.header_home-btn {
+  font-family: Roboto, Arial, Helvetica, sans-serif;
+  font-size: 18px;
+  background: transparent;
+  border: none;
+  color: #ffffff;
+  width: 49px;
+  height: 24px;
+  margin-right: 42px;
+}
+
+.header_sign-in-btn {
+  font-family: Roboto, Arial, Helvetica, sans-serif;
+  color: #ffffff;
+  width: 176px;
+  height: 48px;
+  border-radius: 100px;
+  border: 1px solid #ffffff;
+  background: transparent;
+}
+
+@media screen and (max-width: 900px) {
+  .header {
+    max-height: 400px;
+  }
+
+  .header__menu {
+    padding: 0 40px;
+    height: 66px;
+  }
+
+  .header__display {
+    box-sizing: border-box;
+    width: 100%;
+    max-width: 452px;
+    margin: 38px auto 0;
+    padding: 0 0 48px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .header__title {
+    margin: 0 auto 16px 0;
+    font-size: 36px;
+    line-height: 40px;
+    width: 100%;
+    max-width: 385px;
+    height: auto;
+    padding: 0;
+  }
+
+  .header__sub-title {
+    width: 100%;
+    max-width: 452px;
+    height: auto;
+    margin: 0 auto 48px auto;
+  }
+}
+
+@media screen and (max-width: 644px) {
+  .header_opened .header__logo,
+  .header_opened .header__menu-button {
+    color: #1a1b22;
+    z-index: 2;
+  }
+}
+
+@media screen and (max-width: 520px) {
+  .header__display {
+    padding: 0 40px 40px;
+    margin-top: 38px;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .header {
+    background-image: url("../../assets/header__background.png");
+    background-size: cover;
+    background-position: top center;
+    background-repeat: no-repeat;
+    overflow: visible;
+  }
+
+  .header_theme_light {
+    background-color: #ffffff;
+    background-image: none;
+  }
+
+  .header_opened .header__logo,
+  .header_opened .header__menu-button {
+    color: #ffffff;
+    z-index: 2;
+  }
+
+  .header_theme_dark {
+    min-height: 536px;
+  }
+
+  .header_opened {
+    padding-top: 0;
+    background-color: #1a1b22;
+  }
+
+  .header__menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 16px;
+    height: 56px;
+    border-bottom: 1px solid #d1d2d6;
+  }
+
+  .header_theme_dark .header__logo {
+    font-size: 16px;
+  }
+
+  .header.header_theme_light .header__logo {
+    color: #1a1b22;
+  }
+
+  .header__text-container-hidden {
+    display: none;
+  }
+
+  .header__display {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding: 0 16px 0;
+  }
+
+  .header__title {
+    font-size: 36px;
+    margin: 0 0 0 3px;
+  }
+
+  .header__sub-title {
+    margin: 16px 0 122px;
+    padding: 0;
+    width: 288px;
+    height: 72px;
+  }
+}

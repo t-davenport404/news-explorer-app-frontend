@@ -1,0 +1,119 @@
+.saved-news {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  width: 100%;
+  margin: 0;
+}
+
+.saved-news__header {
+  padding: 40px 624px 56px 104px;
+  background-color: #ffffff;
+}
+
+.saved-news__subtitle {
+  color: #1a1b2280;
+  margin: 0;
+  font-family: Roboto, Arial, Helvetica, sans-serif;
+  font-size: 18px;
+}
+
+.saved-news__title {
+  font-family:
+    Roboto Slab,
+    Arial,
+    Helvetica,
+    sans-serif;
+  font-size: 40px;
+  width: 530px;
+  height: 92px;
+  margin: 28px 0 30px 0;
+}
+
+.saved-news__keywords {
+  font-family: Roboto, Arial, Helvetica, sans-serif;
+  font-size: 18px;
+  line-height: 24px;
+  margin: 0;
+}
+.saved-news__content {
+  width: 100%;
+  max-width: 1440px;
+  margin: 0;
+  padding: 62px 106px;
+  box-sizing: border-box;
+}
+
+.saved-news__grid {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  justify-content: center;
+  justify-items: center;
+  gap: 16px;
+}
+
+@media screen and (max-width: 768px) {
+  .saved-news__header {
+    padding: 32px 40px 32px;
+  }
+
+  .saved-news__title {
+    font-size: 30px;
+    line-height: 34px;
+    max-width: 336px;
+    height: 68px;
+    margin: 16px 0 50px;
+  }
+
+  .saved-news__content {
+    padding: 32px 40px;
+  }
+}
+
+@media screen and (max-width: 540px) {
+  .saved-news__subtitle {
+    font-size: 12px;
+    line-height: 24px;
+  }
+
+  .saved-news__grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 10px;
+    padding: 0;
+  }
+
+  .saved-news__content {
+    padding: 24px 16px 12px;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .saved-news__header {
+    width: 100%;
+    padding: 0;
+  }
+
+  .saved-news__subtitle {
+    width: 288px;
+    height: 24px;
+    margin: 8px 0 16px 16px;
+  }
+
+  .saved-news__title {
+    width: 288px;
+    height: 68px;
+    margin: 0 0 50px 16px;
+  }
+
+  .saved-news__keywords {
+    width: 288px;
+    height: auto;
+    margin: 0 0 32px 15px;
+    display: flex;
+    align-items: center;
+  }
+}
